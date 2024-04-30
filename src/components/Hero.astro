@@ -1,0 +1,70 @@
+---
+import MeteorShower from "./MeteorShower.astro"
+import TwinklingStars from "./TwinklingStars.astro"
+---
+
+<!-- Light Mode: Particles -->
+<div class="absolute inset-0 block dark:hidden">
+  <div id="particles1" class="fixed inset-0"></div>
+  <div id="particles2" class="fixed inset-0"></div>
+  <div id="particles3" class="fixed inset-0"></div>
+</div>
+
+<!-- Dark Theme: Stars -->
+<div class="absolute inset-0 hidden bg-black dark:block">
+  <div id="stars1" class="fixed inset-0"></div>
+  <div id="stars2" class="fixed inset-0"></div>
+  <div id="stars3" class="fixed inset-0"></div>
+</div>
+
+<!-- Dark Theme: Twinkling Stars / Metors -->
+<div id="galaxy" class="fixed inset-0">
+  <div class="hidden dark:block">
+    <TwinklingStars />
+    <MeteorShower />
+  </div>
+</div>
+
+<script is:inline src="/js/bg.js"></script>
+<section class="relative h-screen w-full">
+  <div id="planetcont" class="animate absolute inset-0 top-1/4 overflow-hidden">
+    <div
+      id="crescent"
+      class="absolute left-1/2 top-0 aspect-square min-h-[100vh] w-[250vw] -translate-x-1/2 rounded-full bg-gradient-to-b from-black/25 from-0% to-transparent to-5% p-[1px] dark:from-white/75"
+    >
+      <div
+        id="planet"
+        class="flex h-full w-full justify-center overflow-hidden rounded-full bg-white p-[1px] dark:bg-black"
+      >
+        <div id="blur" class="h-20 w-full rounded-full bg-green-500/25 blur-3xl dark:bg-green-600/25"></div>
+      </div>
+    </div>
+  </div>
+  <div class="animate absolute flex h-full w-full items-center justify-center">
+    <div class="relative flex h-full w-full items-center justify-center">
+      <div class="p-5 text-center">
+        <p class="animated text-lg font-semibold opacity-75 md:text-xl lg:text-2xl">
+          Hi there 👋, Tôi là <span class="text-green-700 dark:text-green-500">Thanh Tân</span>
+        </p>
+        <p class="animated text-2xl font-bold uppercase text-black dark:text-white md:text-3xl lg:text-4xl">
+          Software Developer
+        </p>
+        <p class="animated text-sm opacity-75 md:text-base lg:text-lg">Hiện tại đang thực hiện ước mơ của mình ~~</p>
+        <div id="ctaButtons" class="animated mt-5 flex flex-wrap justify-center gap-4">
+          <a
+            href="/blog"
+            class="blend truncate rounded bg-green-700 px-4 py-2 text-xs text-white hover:opacity-75 dark:bg-green-500 dark:text-black md:text-sm lg:text-base"
+          >
+            Bài viết của tôi
+          </a>
+          <a
+            href="/work"
+            class="blend truncate rounded border border-black/25 px-4 py-2 text-xs hover:bg-black/5 dark:border-white/25 hover:dark:bg-white/15 md:text-sm lg:text-base"
+          >
+            Về tôi, <code>tozydev</code>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

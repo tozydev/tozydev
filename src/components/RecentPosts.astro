@@ -1,0 +1,37 @@
+---
+import { getBlogPosts } from "@lib/blog"
+import ArrowCard from "./ArrowCard"
+import { ui } from "@consts"
+
+type Props = {
+  limit: number
+}
+
+const { limit } = Astro.props
+const posts = await getBlogPosts({ limit })
+---
+
+<section class="animate">
+  <div class="space-y-4">
+    <div class="flex justify-between">
+      <p class="font-semibold text-black dark:text-white">{ui.recent_posts}</p>
+      <a
+        href="/blog"
+        class="blend group col-span-3 flex w-fit items-center gap-1 text-black underline decoration-black/25 decoration-[.5px] underline-offset-2 hover:decoration-black dark:text-white dark:decoration-white/50 dark:hover:decoration-white"
+      >
+        <span class="blend text-black/75 group-hover:text-black dark:text-white/75 group-hover:dark:text-white">
+          {ui.all_posts}
+        </span>
+      </a>
+    </div>
+    <ul class="space-y-4">
+      {
+        posts.map((post) => (
+          <li>
+            <ArrowCard entry={post} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

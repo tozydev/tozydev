@@ -1,0 +1,57 @@
+---
+import { SOCIALS } from "@config"
+import Container from "@components/Container.astro"
+import { ui } from "@consts"
+import BackToTopButton from "./BackToTopButton.astro"
+
+type Props = {
+  showBackToTop?: boolean
+}
+
+const { showBackToTop = true }: Props = Astro.props
+---
+
+<footer class="relative bg-white dark:bg-black">
+  <div class="animate">
+    {
+      showBackToTop && (
+        <section class="py-5">
+          <Container size="md">
+            <div class="flex items-center justify-center sm:justify-end">
+              <BackToTopButton />
+            </div>
+          </Container>
+        </section>
+      )
+    }
+
+    <section class="overflow-hidden whitespace-nowrap border-t border-black/10 py-5 dark:border-white/25">
+      <Container size="md">
+        <div class="grid h-full grid-cols-1 gap-3 sm:grid-cols-2">
+          <div class="order-2 mt-2 flex flex-col items-center justify-center text-sm sm:order-1 sm:items-start">
+            <Fragment set:html={ui.copyright} />
+          </div>
+
+          <div class="order-1 flex justify-center sm:order-2 sm:justify-end">
+            <div class="flex flex-wrap items-center justify-center gap-1">
+              {
+                SOCIALS.map((social) => (
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    aria-label={`${social.text} on ${social.name}`}
+                    class="blend group size-10 items-center justify-center rounded-full p-2 hover:bg-black/5  dark:hover:bg-white/20"
+                  >
+                    <svg class="blend size-full fill-current group-hover:fill-black group-hover:dark:fill-white">
+                      <use href={`/social.svg#${social.icon}`} />
+                    </svg>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </div>
+</footer>

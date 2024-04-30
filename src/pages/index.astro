@@ -1,0 +1,30 @@
+---
+import PageLayout from "@layouts/PageLayout.astro"
+import Hero from "@components/Hero.astro"
+// import RecentPosts from "@components/RecentPosts.astro"
+---
+
+<PageLayout>
+  <Hero />
+
+  <div class="relative bg-white dark:bg-black">
+    <div class="mx-auto max-w-screen-sm space-y-24 p-5 pb-16">
+      <!-- About Section -->
+      <section class="animate">
+        <article>
+          <p>
+            Tôi là <b>Nguyễn Thanh Tân</b>, một sinh viên đam mê ngành công nghệ. Tôi luôn yêu thích việc tìm tòi, khám
+            phá những điều mới, ngay cả trong lập trình và trong cuộc sống.
+          </p>
+          <p>
+            Hiện tại, tôi đang theo đuổi vị trí <b><i>Backend Developer</i></b> cùng với ngôn ngữ lập trình
+            <b><i>Java/Kotlin</i></b>...
+          </p>
+          <a href="/about" class="text-green-700 dark:text-green-500"><i>Biết thêm về tui tại đây...</i></a>
+        </article>
+      </section>
+
+      <!-- <RecentPosts limit={3} /> -->
+    </div>
+  </div>
+</PageLayout>

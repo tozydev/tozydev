@@ -1,0 +1,19 @@
+---
+import { ui } from "@consts"
+import { pages } from "@consts"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+---
+
+<PageLayout title={pages["404"].title} description={pages["404"].description} showBackToTop={false}>
+  <TopLayout>
+    <div class="animate page-heading">{pages["404"].title}</div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate page-content">
+      <p>{pages["404"].description}</p>
+      <a href="/" class="text-green-500">{ui.return_home}</a>
+    </div>
+  </BottomLayout>
+</PageLayout>

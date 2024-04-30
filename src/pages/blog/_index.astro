@@ -1,0 +1,24 @@
+---
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import Blog from "@components/Blog"
+import { getBlogPosts } from "@lib/blog"
+import { pages } from "@consts"
+
+const posts = await getBlogPosts()
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort((a, b) => a.localeCompare(b))
+---
+
+<PageLayout title={pages.blog.title} description={pages.blog.description}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {pages.blog.title}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      <Blog client:load tags={tags} data={posts} />
+    </div>
+  </BottomLayout>
+</PageLayout>

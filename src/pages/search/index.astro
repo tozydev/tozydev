@@ -1,0 +1,23 @@
+---
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import Search from "@components/Search"
+import { getBlogPosts } from "@lib/blog"
+import { pages } from "@consts"
+
+const posts = await getBlogPosts()
+---
+
+<PageLayout title={pages.search.title} description={pages.search.description}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {pages.search.title}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      <Search client:load data={posts} />
+    </div>
+  </BottomLayout>
+</PageLayout>
