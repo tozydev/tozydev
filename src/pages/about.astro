@@ -1,5 +1,111 @@
 ---
+import { pages } from "@consts"
+import BottomLayout from "@layouts/BottomLayout.astro"
 import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
 ---
 
-<PageLayout />
+<PageLayout title={pages.about.title} description={pages.about.description}>
+  <TopLayout>
+    <div class="animate">
+      <h1 class="mt-2 text-3xl font-semibold text-black dark:text-white">
+        {pages.about.title}
+      </h1>
+      <blockquote>🌟 Let's dream and do it! 🚀</blockquote>
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <article>
+      <div class="animate">
+        <h2>Về blog</h2>
+        <p>
+          Tozydev là một blog cá nhân của tôi đuợc xây dựng bằng framework <a href="https://astro.build/">Astro</a>,
+          giao diện được chỉnh sửa lại từ giao diện <a href="https://github.com/markhorn-dev/astro-sphere"
+            >AstroSphere</a
+          > của <a href="https://github.com/markhorn-dev"><em>Markhorn Dev</em></a>. Tại đây, tôi sẽ chia sẽ những kiến
+          thức và trải nghiệm lập trình của mình, đặc biệt là <a href="https://kotlinlang.org/"
+            ><strong>Kotlin</strong></a
+          > và <a href="https://www.java.com/"><strong>Java</strong></a> - 2 ngôn ngữ lập trình yêu thích của tôi.
+        </p>
+        <p>
+          Ngoài các chủ đề lập trình, blog này cũng sẽ đề cập đến những chủ đề khác trong thế giới công nghệ ngày nay.
+          Hãy cùng <code>tozydev</code>
+          <em>“Mơ ước và hành động”</em> trên hành trình chinh phục thế giới lập trình thú vị này nhé!
+        </p>
+        <h2>Về tôi</h2>
+        <p>
+          Tôi là <strong>Nguyễn Thanh Tân</strong>, một sinh viên đam mê ngành công nghệ. Hiện tôi đang theo học ngành
+          <em><strong>Công nghệ thông tin</strong></em> của trường <em
+            ><strong>Đại học Giao thông vận tải TP.HCM</strong></em
+          >. Tôi luôn yêu thích việc tìm tòi, khám phá những điều mới, ngay cả trong lập trình và trong cuộc sống.
+        </p>
+        <p>
+          Hành trình khám phá thế giới lập trình của tôi bắt đầu khi tôi tiếp xúc với <a
+            href="https://en.wikipedia.org/wiki/Pascal_(programming_language)"><strong>Pascal</strong></a
+          > hồi còn học cấp 2. Tuy nhiên, nguồn cảm hứng thực sự, thứ đã khiến tôi yêu thích và đam mê lập trình, đến từ
+          tựa game <a href="https://www.minecraft.net/"><strong>Minecraft</strong></a>. Để có thể mở một server riêng và
+          chơi cùng bạn bè, tôi đã tìm hiểu về Bukkit<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup> và
+          từ đó bắt đầu học lập trình và xây dựng các plugin cho server của mình.
+        </p>
+        <p>
+          Hiện tại, ngôn ngữ lập trình yêu thích của tôi hiện nay là <strong>Kotlin</strong>. Ban đầu nó là một <em
+            >JVM language</em
+          ><sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup>, nó đang dần phát triển và có thể chạy được
+          đa nền tảng. Tôi mong ngày nào đó có thể sử dụng nó rộng rãi hơn. Còn về <em>IDE</em><sup class="footnote-ref"
+            ><a href="#fn3" id="fnref3">3</a></sup
+          > mà tôi yêu thích thì chắc chắn là <strong>IntelliJ</strong> của <em><strong>Jetbrains</strong></em>. Nó là
+          một công cụ mạnh mẽ cho việc phát triển Java/Kotlin và một số ngôn ngữ khác. Không những vậy, nó còn giao giao
+          diện đẹp, trực quan và cả công cụ code format rất mạnh.
+        </p>
+        <p>
+          Con đuờng phía trước, tôi hướng đến vị trí <strong>Backend Developer</strong> với <strong>Kotlin/Java</strong
+          >. Và tương lai xa hơn, tôi sẽ nỗ lực để đạt đuợc vị trí <em>leader</em> cũng như sẽ khởi nghiệp với một <em
+            >startup</em
+          > của riêng mình.
+        </p>
+        <p>Tôi mong rằng hành trình thực hiện giấc mơ của tôi sẽ là nguồn cảm hứng tuyệt vời cho bạn.</p>
+        <blockquote>
+          <p>
+            Mọi người có thể gọi tôi là <code>tozy</code> - ban đầu là một IGN<sup class="footnote-ref"
+              ><a href="#fn4" id="fnref4">4</a></sup
+            >, nhưng giờ tôi muốn sử dụng nó như tên khác của mình.
+          </p>
+        </blockquote>
+        <p>Make with ❤️ by tozydev ~~</p>
+        <hr class="footnotes-sep" />
+        <section class="footnotes">
+          <ol class="footnotes-list">
+            <li id="fn1" class="footnote-item">
+              <p>
+                Một nền tảng dùng để mở server Minecraft. Bạn có thể tìm hiểu thêm tại đây <a
+                  href="https://dev.bukkit.org/">dev.bukkit.org</a
+                >
+                <a href="#fnref1" class="footnote-backref">↩︎</a>
+              </p>
+            </li>
+            <li id="fn2" class="footnote-item">
+              <p>
+                Là ngôn ngữ lập trình đuợc thiết để chạy trên máy ảo Java hay JVM. Một số ngôn ngữ JVM phổ biến là:
+                Java, Kotlin, Scala, Groovy, … <a href="#fnref2" class="footnote-backref">↩︎</a>
+              </p>
+            </li>
+            <li id="fn3" class="footnote-item">
+              <p>
+                <em>Integrated Development Environment</em>, một môi truờng phát triển phần mềm tích hợp nhiều công cụ,
+                chức năng bla bla… <a href="#fnref3" class="footnote-backref">↩︎</a>
+              </p>
+            </li>
+            <li id="fn4" class="footnote-item">
+              <p>
+                <em>In-game Name</em>, là tên đuợc sử dụng trong game thay vì tên thật. <a
+                  href="#fnref4"
+                  class="footnote-backref">↩︎</a
+                >
+              </p>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </article>
+  </BottomLayout>
+</PageLayout>

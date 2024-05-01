@@ -1,6 +1,10 @@
 import type { Page } from "@types"
 
 export const pages: Record<string, Page> = {
+  about: {
+    title: "Giới thiệu",
+    description: "Một chút về bản thân và blog của mình.",
+  },
   blog: {
     title: "Blog",
     description: "Những bài viết về những chủ đề mình đam mê.",
