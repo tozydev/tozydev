@@ -1,8 +1,0 @@
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "prHourlyLimit": 5,
-  "labels": ["type: dependencies"],
-  "timezone": "Asia/Ho_Chi_Minh",
-  "schedule": ["* 6-19 * * SUN,SAT"]
-}
